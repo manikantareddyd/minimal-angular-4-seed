@@ -32,12 +32,12 @@ gulp.task("move_client_data", ["clean_client"] , () => {
         .pipe(gulp.dest(CLIENT_DEST_DIR));
 });
 
-gulp.task("move_client_systemjs", () => {
+gulp.task("move_client_systemjs", ["move_client_data"], () => {
     return gulp.src(CLIENT_SYSTEM_FILES)
         .pipe(gulp.dest(CLIENT_DEST_DIR));
 });
 
-gulp.task("build_client", ["move_client_data", "move_client_systemjs"], () => {
+gulp.task("build_client", ["move_client_systemjs"], () => {
     return clientTsProject.src()
         .pipe(sourcemaps.init())
         .pipe(clientTsProject())

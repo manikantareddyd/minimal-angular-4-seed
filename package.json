@@ -5,8 +5,8 @@
     "scripts": {
         "build": "gulp",
         "build:watch": "gulp watch",
-        "build:aot": "gulp aot",
-        "serve": "lite-server -c=bs-config.json"
+        "build:aot": "gulp client_aot",
+        "start": "lite-server -c=bs-config.json"
     },
     "keywords": [],
     "author": "Manikanta Reddy D.",
